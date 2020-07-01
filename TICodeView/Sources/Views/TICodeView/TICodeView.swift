@@ -53,10 +53,10 @@ open class TICodeView<View: OneCodeView, ViewModel: TICodeViewModel>: BaseInitia
     open func configure(with viewModel: ViewModel) {
         textFieldsCollection = createTextFields(numberOfFields: viewModel.codeConfig.codeSymbolsCount)
         
-        configure(customSpacing: viewModel.codeConfig.customSpacing, for: codeStackView)
-        
         codeStackView.addArrangedSubviews(textFieldsCollection)
         codeStackView.spacing = viewModel.codeConfig.spacing
+        
+        configure(customSpacing: viewModel.codeConfig.customSpacing, for: codeStackView)
         
         bindTextFields(with: viewModel)
         
