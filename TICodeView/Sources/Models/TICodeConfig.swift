@@ -22,8 +22,14 @@
 
 import UIKit
 
-public struct TICodeConfig {
+open class TICodeConfig {
     public let codeSymbolsCount: Int
     public let spacing: CGFloat
     public let customSpacing: Spacing?
+    
+    public init(codeSymbolsCount: Int, spacing: CGFloat, customSpacing: Spacing?) {
+        self.codeSymbolsCount = codeSymbolsCount
+        self.spacing = spacing
+        self.customSpacing = customSpacing
+    }
 }
