@@ -25,7 +25,7 @@ import UIKit
 /// Basic ViewModel of textFieldView for entering the verification code
 open class TICodeViewModel {
     
-    public weak var delegate: TICodeViewModelDelegate?
+    open weak var delegate: TICodeViewModelDelegate?
     
     public var onTextEnter: ((String) -> Void)?
     
