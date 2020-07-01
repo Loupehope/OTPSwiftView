@@ -20,7 +20,6 @@
 		4CAA6EF624ACC56600AEFD62 /* BaseInitializableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EF524ACC56600AEFD62 /* BaseInitializableView.swift */; };
 		4CAA6EF924ACC5E300AEFD62 /* TICodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EF824ACC5E300AEFD62 /* TICodeView.swift */; };
 		4CAA6EFC24ACC5F300AEFD62 /* TICodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EFB24ACC5F300AEFD62 /* TICodeViewModel.swift */; };
-		4CAA6EFE24ACCA1500AEFD62 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EFD24ACCA1500AEFD62 /* UIView+Extensions.swift */; };
 		4CD6B3BF24ACCC5F003BAD74 /* TICodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6B3BE24ACCC5F003BAD74 /* TICodeConfig.swift */; };
 		4CD6B3C224ACD2A3003BAD74 /* TICodeViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6B3C124ACD2A3003BAD74 /* TICodeViewModelDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		4CAA6EF524ACC56600AEFD62 /* BaseInitializableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInitializableView.swift; sourceTree = "<group>"; };
 		4CAA6EF824ACC5E300AEFD62 /* TICodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TICodeView.swift; sourceTree = "<group>"; };
 		4CAA6EFB24ACC5F300AEFD62 /* TICodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TICodeViewModel.swift; sourceTree = "<group>"; };
-		4CAA6EFD24ACCA1500AEFD62 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		4CD6B3BE24ACCC5F003BAD74 /* TICodeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TICodeConfig.swift; sourceTree = "<group>"; };
 		4CD6B3C124ACD2A3003BAD74 /* TICodeViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TICodeViewModelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +92,6 @@
 				4CAA6EE024ACC15400AEFD62 /* UIStackView */,
 				4CAA6EE824ACC28900AEFD62 /* InitializableViewProtocol */,
 				4CAA6EF124ACC44E00AEFD62 /* UITextField */,
-				4CAA6EFF24ACCA2400AEFD62 /* UIView */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,14 +180,6 @@
 				4CAA6EFB24ACC5F300AEFD62 /* TICodeViewModel.swift */,
 			);
 			path = TICodeView;
-			sourceTree = "<group>";
-		};
-		4CAA6EFF24ACCA2400AEFD62 /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				4CAA6EFD24ACCA1500AEFD62 /* UIView+Extensions.swift */,
-			);
-			path = UIView;
 			sourceTree = "<group>";
 		};
 		4CD6B3C024ACCC62003BAD74 /* Models */ = {
@@ -291,7 +280,6 @@
 				4CAA6EF624ACC56600AEFD62 /* BaseInitializableView.swift in Sources */,
 				4CAA6EF024ACC41300AEFD62 /* UITextField+Extensions.swift in Sources */,
 				4CAA6EEB24ACC36E00AEFD62 /* OneCodeViewProtocol.swift in Sources */,
-				4CAA6EFE24ACCA1500AEFD62 /* UIView+Extensions.swift in Sources */,
 				4CD6B3BF24ACCC5F003BAD74 /* TICodeConfig.swift in Sources */,
 				4CAA6EF924ACC5E300AEFD62 /* TICodeView.swift in Sources */,
 				4CAA6EED24ACC39000AEFD62 /* OneCodeTextField.swift in Sources */,

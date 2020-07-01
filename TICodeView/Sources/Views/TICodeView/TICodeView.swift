@@ -37,12 +37,6 @@ open class TICodeView<View: OneCodeView, ViewModel: TICodeViewModel>: BaseInitia
         addSubview(codeStackView)
     }
     
-    open override func configureLayout() {
-        super.configureLayout()
-        
-        codeStackView.setToSuperview()
-    }
-    
     open override func configureAppearance() {
         super.configureAppearance()
         

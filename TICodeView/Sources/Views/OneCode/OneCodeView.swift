@@ -33,10 +33,4 @@ open class OneCodeView: InitializableOneCodeView {
         
         addSubview(codeTextField)
     }
-    
-    override open func configureLayout() {
-        super.configureLayout()
-        
-        codeTextField.setToSuperview()
-    }
 }
