@@ -79,7 +79,7 @@ extension OneCodeTextField: UITextFieldDelegate {
         
         let isInputEmpty = textField.unwrappedText.isEmpty && string.isEmpty
         
-        guard isInputEmpty || !(validationClosure?(string) ?? true) else {
+        guard isInputEmpty || validationClosure?(string) ?? false else {
             return false
         }
         
