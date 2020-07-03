@@ -22,8 +22,8 @@
 
 import Foundation
 
-extension Substring {
-    public var string: String {
+public extension Substring {
+    var string: String {
         String(self)
     }
 }

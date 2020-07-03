@@ -28,7 +28,7 @@ open class OneCodeView: InitializableOneCodeView {
     
     public var onTap: (() -> Void)?
     
-    override open func addViews() {
+    open override func addViews() {
         super.addViews()
         
         addSubview(codeTextField)

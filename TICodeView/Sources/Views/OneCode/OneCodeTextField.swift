@@ -41,7 +41,7 @@ public class OneCodeTextField: UITextField {
         true
     }
     
-    override public init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
 
         delegate = self
@@ -52,7 +52,7 @@ public class OneCodeTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override open func deleteBackward() {
+    open override func deleteBackward() {
         guard unwrappedText.isEmpty else {
             return
         }

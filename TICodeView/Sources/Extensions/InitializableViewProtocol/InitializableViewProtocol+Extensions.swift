@@ -22,8 +22,8 @@
 
 import Foundation
 
-extension InitializableViewProtocol {
-    public func initializeView() {
+public extension InitializableViewProtocol {
+    func initializeView() {
         addViews()
         configureLayout()
         bindViews()
