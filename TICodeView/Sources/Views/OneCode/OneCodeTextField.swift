@@ -37,6 +37,10 @@ public class OneCodeTextField: UITextField {
         return isLastNotEmpty ? self : nextTextField?.lastNotEmpty ?? self
     }
     
+    open var isCursorEqualsFontHeight: Bool {
+        true
+    }
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -66,6 +70,17 @@ public class OneCodeTextField: UITextField {
             : ""
         
         nextTextField?.set(inputText: nextInputText)
+    }
+    
+    open override func caretRect(for position: UITextPosition) -> CGRect {
+        guard isCursorEqualsFontHeight, let font = font else {
+            return super.caretRect(for: position)
+        }
+        
+        var superRect = super.caretRect(for: position)
+        superRect.size.height = font.pointSize - font.descender
+
+        return superRect
     }
 }
 
