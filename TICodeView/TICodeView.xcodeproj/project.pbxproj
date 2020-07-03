@@ -141,8 +141,8 @@
 		4CAA6EEE24ACC3AB00AEFD62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4CAA6EF424ACC55B00AEFD62 /* OneCode */,
 				4CAA6EF724ACC56A00AEFD62 /* BaseInitializableView */,
+				4CAA6EF424ACC55B00AEFD62 /* OneCode */,
 				4CAA6EFA24ACC5E900AEFD62 /* TICodeView */,
 			);
 			path = Views;

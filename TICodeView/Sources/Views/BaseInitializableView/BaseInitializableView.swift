@@ -46,7 +46,7 @@ open class BaseInitializableView: UIView, InitializableViewProtocol {
     }
     
     open func configureLayout() {
-        // override in subclass
+        assertionFailure("Override in subclass")
     }
     
     open func configureAppearance() {
