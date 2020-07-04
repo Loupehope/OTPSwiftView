@@ -137,7 +137,7 @@ To receive information from the code view or to transfer it, you need to create 
 ```swift
 import TICodeView
 
-final class RuntimeCodeTextFieldViewModel: TICodeViewModel {
+final class CodeViewModel: TICodeViewModel {
     // Your additional code here
 }
 ```
