@@ -145,7 +145,7 @@ final class RuntimeCodeTextFieldViewModel: TICodeViewModel {
 # Installation via SPM
 
 ```swift
-package.append(.package(url: "https://github.com/Loupehope/TICodeView.git", from: "0.0.2"))
+package.append(.package(url: "https://github.com/Loupehope/TICodeView.git", from: "0.0.3"))
 ```
 
 # License
