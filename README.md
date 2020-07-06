@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     let codeView = CustomCodeView() // Your custom Code View
 
     let config = TICodeConfig(codeSymbolsCount: 6, // Base configuration of your Code View
-                               spacing: 6,
-                               customSpacing: [2: 20])
+                              spacing: 6,
+                              customSpacing: [2: 20])
                           
     let codeViewModel = CustomCodeViewModel(codeConfig: config) // Custom viewModel for Code View
 
