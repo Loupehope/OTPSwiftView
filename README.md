@@ -1,11 +1,11 @@
-# TICodeView
+# OTPSwiftView
 
 ![Version](https://img.shields.io/github/v/release/Loupehope/TICodeView)
 ![Platform](https://img.shields.io/badge/platform-iOS-green)
 ![License](https://img.shields.io/hexpm/l/plug?color=darkBlue)
 
 
-A fully customizable verification code view.
+A fully customizable OTP view.
 
 <p align="left">
 <img src="Assets/preview.gif" width=300 height=533>  
@@ -14,13 +14,11 @@ A fully customizable verification code view.
 # Usage
 ```swift 
 class ViewController: UIViewController {
-    let codeView = CustomCodeView() // Your custom Code View
+    let otpView = CustomOTPSwiftView() // Custom OTP view
 
-    let config = TICodeConfig(codeSymbolsCount: 6, // Base configuration of your Code View
-                              spacing: 6,
-                              customSpacing: [2: 20])
-                          
-    let codeViewModel = CustomCodeViewModel(codeConfig: config) // Custom viewModel for Code View
+    let config = OTPCodeConfig(codeSymbolsCount: 6, // Base configuration of OTP view
+                               spacing: 6,
+                               customSpacing: [2: 20])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,51 +27,39 @@ class ViewController: UIViewController {
           Add your codeView and set layout 
         */
         
-        /* Configure codeView */
+        /* Configure OTP view */
         
-        codeView.configure(with: codeViewModel)
+        otpView.configure(with: config)
         
         /* Bind events */
         
-        codeViewModel.onTextEnter = { code in
+        otpView.onTextEnter = { code in
             // Get code from codeView
         }
         
-        codeViewModel.set(text: <Some text>) // set text to codeView
+        /* Update text */
         
-        codeTextFieldViewModel.clearText() // remove all text from codeView
+        otpView.code = "234435"
         
-        codeTextFieldViewModel.set(focus: true|false) // set keyboard focus to codeView
-    }
-```
-
-## OneCodeView
-There is a base class that describes a single code view - **OneCodeView**. This class has neither layout nor appearance of input field.
-```swift
-open class OneCodeView: InitializableOneCodeView {
-    public let codeTextField = OneCodeTextField() // Code textField
-    
-    public var onTap: (() -> Void)? // Closure for a tap gesture
-    
-    open override func addViews() { // Function to add our codeTextField to base view
-        super.addViews()
+        /* Update focus */
         
-        addSubview(codeTextField)
+        otpView.focus = true|false
     }
 }
 ```
-To customize the appearance and layout of the one code view, you must inherit from the **OneCodeView**.
 
-
+## Customize 
+**OTPView** is a base class that describes a single OTP textfield.  
+To customize the appearance and layout, you must inherit from the **OTPView**.  
 Don't forget to add UIGestureRecognizer to call closure `onTap?()`.
 ```swift
-import TICodeView
+import OTPSwiftView
 
-class CustomOneCodeView: OneCodeView {
+class CustomOTPView: OTPView {
     override func addViews() {
         super.addViews()
         
-        // Adding additional views to current view. The one code view has already been added.
+        // Adding additional views to current view. The OTP textfield has already been added.
     }
     
     override func configureLayout() {
@@ -95,16 +81,17 @@ class CustomOneCodeView: OneCodeView {
     }
 }
 ```
-## TICodeView
-**TICodeView** is a base class that is responsible for the layout of single code views. As with **OneCodeView**, you should create an heir class to configure your code view.
+## OTPSwiftView
+**OTPSwiftView** is a base class that is responsible for the layout of single OTP views.  
+As with **OTPView**, you should create an heir class to configure your full OTP view.
 ```swift
-import TICodeView
+import OTPSwiftView
 
-final class CodeView: TICodeView<CustomOneCodeView, CodeViewModel> {
+final class CustomOTPSwiftView: OTPSwiftView<CustomOTPView> {
     override func addViews() {
         super.addViews()
         
-        // Adding additional views to current code view. The code view has already been added.
+        // Adding additional views to current code view. The single OTP views has already been added.
     }
     
     override func configureLayout() {
@@ -125,20 +112,11 @@ final class CodeView: TICodeView<CustomOneCodeView, CodeViewModel> {
         // Appearance configuration method
     }
 
-    override func configure(with viewModel: CodeViewModel) {
-        super.configure(with: viewModel)
+    override func configure(with config: OTPCodeConfig) {
+        super.configure(with: config)
 
-        // Configure you code view with viewModel
+        // Configure you code view with configuration
     }
-}
-```
-## TICodeViewModel
-To receive information from the code view or to transfer it, you need to create a viewModel.
-```swift
-import TICodeView
-
-final class CodeViewModel: TICodeViewModel {
-    // Your additional code here
 }
 ```
 
