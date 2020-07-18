@@ -48,9 +48,10 @@ class ViewController: UIViewController {
 }
 ```
 
-## Customize 
-**OTPView** is a base class that describes a single OTP textfield.  
-To customize the appearance and layout, you must inherit from the **OTPView**.  
+# Customization 
+## Single OTP View
+*OTPView* is a base class that describes a single OTP textfield.  
+To customize the appearance and layout, you must inherit from the OTPView.  
 Don't forget to add UIGestureRecognizer to call closure `onTap?()`.
 ```swift
 import OTPSwiftView
@@ -82,8 +83,8 @@ class CustomOTPView: OTPView {
 }
 ```
 ## OTPSwiftView
-**OTPSwiftView** is a base class that is responsible for the layout of single OTP views.  
-As with **OTPView**, you should create an heir class to configure your full OTP view.
+*OTPSwiftView* is a base class that is responsible for the layout of single OTP views.  
+As with OTPView, you should create an heir class to configure your full OTP view.
 ```swift
 import OTPSwiftView
 
