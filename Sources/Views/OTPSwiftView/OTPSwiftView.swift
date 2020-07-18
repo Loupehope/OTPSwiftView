@@ -20,13 +20,11 @@
 //  THE SOFTWARE.
 //
 
-#if !os(macOS)
-
 import UIKit
 import TIUIKitCore
 
 /// Basic textFieldView for entering the verification code
-open class TICodeView<View: OneCodeView>: BaseInitializableView {
+open class OTPSwiftView<View: OTPView>: BaseInitializableView {
     public private(set) var codeStackView = UIStackView()
     public private(set) var textFieldsCollection: [View] = []
     
@@ -63,7 +61,7 @@ open class TICodeView<View: OneCodeView>: BaseInitializableView {
         codeStackView.distribution = .fillEqually
     }
 
-    open func configure(with config: TICodeConfig) {
+    open func configure(with config: OTPCodeConfig) {
         textFieldsCollection = createTextFields(numberOfFields: config.codeSymbolsCount)
         
         codeStackView.addArrangedSubviews(textFieldsCollection)
@@ -89,7 +87,7 @@ open class TICodeView<View: OneCodeView>: BaseInitializableView {
 
 // MARK: - Configure textfields
 
-private extension TICodeView {
+private extension OTPSwiftView {
     func configure(customSpacing: Spacing?, for stackView: UIStackView) {
         guard let customSpacing = customSpacing else {
             return
@@ -127,7 +125,7 @@ private extension TICodeView {
         return textFieldsCollection
     }
     
-    func bindTextFields(with config: TICodeConfig) {
+    func bindTextFields(with config: OTPCodeConfig) {
         let onTextChangedSignal: VoidClosure = { [weak self] in
             guard let code = self?.code else { return }
             
@@ -145,5 +143,3 @@ private extension TICodeView {
         }
     }
 }
-
-#endif

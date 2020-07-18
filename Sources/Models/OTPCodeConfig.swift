@@ -20,11 +20,9 @@
 //  THE SOFTWARE.
 //
 
-#if !os(macOS)
-
 import UIKit
 
-open class TICodeConfig {
+open class OTPCodeConfig {
     public let codeSymbolsCount: Int
     public let spacing: CGFloat
     public let customSpacing: Spacing?
@@ -35,5 +33,3 @@ open class TICodeConfig {
         self.customSpacing = customSpacing
     }
 }
-
-#endif

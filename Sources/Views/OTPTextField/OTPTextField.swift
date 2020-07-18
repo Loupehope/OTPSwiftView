@@ -20,21 +20,19 @@
 //  THE SOFTWARE.
 //
 
-#if !os(macOS)
-
 import UIKit
 
 /// Basic one code textField for entering the verification code
-public class OneCodeTextField: UITextField {
+public class OTPTextField: UITextField {
     private let maxSymbolsCount = 1
     
-    public weak var previousTextField: OneCodeTextField?
-    public weak var nextTextField: OneCodeTextField?
+    public weak var previousTextField: OTPTextField?
+    public weak var nextTextField: OTPTextField?
     
     public var onTextChangedSignal: VoidClosure?
     public var validationClosure: ((String) -> Bool)?
     
-    public var lastNotEmpty: OneCodeTextField {
+    public var lastNotEmpty: OTPTextField {
         let isLastNotEmpty = !unwrappedText.isEmpty && nextTextField?.unwrappedText.isEmpty ?? true
         return isLastNotEmpty ? self : nextTextField?.lastNotEmpty ?? self
     }
@@ -86,11 +84,11 @@ public class OneCodeTextField: UITextField {
     }
 }
 
-extension OneCodeTextField: UITextFieldDelegate {
+extension OTPTextField: UITextFieldDelegate {
     public func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
-        guard let textField = textField as? OneCodeTextField else {
+        guard let textField = textField as? OTPTextField else {
             return true
         }
         
@@ -120,5 +118,3 @@ extension OneCodeTextField: UITextFieldDelegate {
         }
     }
 }
-
-#endif
