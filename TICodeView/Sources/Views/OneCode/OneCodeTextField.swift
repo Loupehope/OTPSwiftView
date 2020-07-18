@@ -20,6 +20,8 @@
 //  THE SOFTWARE.
 //
 
+#if !os(macOS)
+
 import UIKit
 
 /// Basic one code textField for entering the verification code
@@ -29,7 +31,7 @@ public class OneCodeTextField: UITextField {
     public weak var previousTextField: OneCodeTextField?
     public weak var nextTextField: OneCodeTextField?
     
-    public var onTextChanged: (() -> Void)?
+    public var onTextChangedSignal: VoidClosure?
     public var validationClosure: ((String) -> Bool)?
     
     public var lastNotEmpty: OneCodeTextField {
@@ -57,7 +59,7 @@ public class OneCodeTextField: UITextField {
             return
         }
         
-        onTextChanged?()
+        onTextChangedSignal?()
         previousTextField?.text = ""
         previousTextField?.becomeFirstResponder()
     }
@@ -104,13 +106,13 @@ extension OneCodeTextField: UITextFieldDelegate {
             
             let currentTextField = textField.lastNotEmpty.nextTextField ?? textField.lastNotEmpty
             currentTextField.becomeFirstResponder()
-            textField.onTextChanged?()
+            textField.onTextChangedSignal?()
             
             return false
             
         case 1:
             textField.text = ""
-            textField.onTextChanged?()
+            textField.onTextChangedSignal?()
             return false
             
         default:
@@ -119,3 +121,4 @@ extension OneCodeTextField: UITextFieldDelegate {
     }
 }
 
+#endif

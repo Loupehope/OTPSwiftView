@@ -20,6 +20,8 @@
 //  THE SOFTWARE.
 //
 
+#if !os(macOS)
+
 import UIKit
 
 open class TICodeConfig {
@@ -33,3 +35,5 @@ open class TICodeConfig {
         self.customSpacing = customSpacing
     }
 }
+
+#endif

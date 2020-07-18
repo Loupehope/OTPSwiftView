@@ -20,9 +20,13 @@
 //  THE SOFTWARE.
 //
 
+#if !os(macOS)
+
 import UIKit
 
 //MARK: - Types
 
 public typealias Spacing = [Int: CGFloat]
-public typealias InitializableOneCodeView = BaseInitializableView & OneCodeViewProtocol
+public typealias VoidClosure = (() -> Void)
+
+#endif

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "TIUIKitCore",
+        "repositoryURL": "https://github.com/Loupehope/TIUIKitCore",
+        "state": {
+          "branch": null,
+          "revision": "464cf383253aa1accbd7484dbeeb2866bfb04293",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

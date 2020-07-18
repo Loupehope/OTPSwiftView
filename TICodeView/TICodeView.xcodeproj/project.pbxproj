@@ -3,25 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C8F38C024C31A9B005FCBED /* TIUIKitCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4C8F38BF24C31A9B005FCBED /* TIUIKitCore */; };
 		4CAA6ED024ACBF2500AEFD62 /* TICodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CAA6ECE24ACBF2500AEFD62 /* TICodeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CAA6EDC24ACC12400AEFD62 /* Substring+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EDB24ACC12400AEFD62 /* Substring+Extensions.swift */; };
-		4CAA6EDF24ACC14200AEFD62 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EDE24ACC14200AEFD62 /* UIStackView+Extensions.swift */; };
 		4CAA6EE224ACC19900AEFD62 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EE124ACC19900AEFD62 /* Typealias.swift */; };
-		4CAA6EE524ACC1F100AEFD62 /* InitializableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EE424ACC1F100AEFD62 /* InitializableViewProtocol.swift */; };
-		4CAA6EE724ACC26200AEFD62 /* InitializableViewProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EE624ACC26200AEFD62 /* InitializableViewProtocol+Extensions.swift */; };
-		4CAA6EEB24ACC36E00AEFD62 /* OneCodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EEA24ACC36E00AEFD62 /* OneCodeViewProtocol.swift */; };
 		4CAA6EED24ACC39000AEFD62 /* OneCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EEC24ACC39000AEFD62 /* OneCodeTextField.swift */; };
 		4CAA6EF024ACC41300AEFD62 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EEF24ACC41300AEFD62 /* UITextField+Extensions.swift */; };
 		4CAA6EF324ACC54200AEFD62 /* OneCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EF224ACC54200AEFD62 /* OneCodeView.swift */; };
-		4CAA6EF624ACC56600AEFD62 /* BaseInitializableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EF524ACC56600AEFD62 /* BaseInitializableView.swift */; };
 		4CAA6EF924ACC5E300AEFD62 /* TICodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EF824ACC5E300AEFD62 /* TICodeView.swift */; };
-		4CAA6EFC24ACC5F300AEFD62 /* TICodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA6EFB24ACC5F300AEFD62 /* TICodeViewModel.swift */; };
 		4CD6B3BF24ACCC5F003BAD74 /* TICodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6B3BE24ACCC5F003BAD74 /* TICodeConfig.swift */; };
-		4CD6B3C224ACD2A3003BAD74 /* TICodeViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6B3C124ACD2A3003BAD74 /* TICodeViewModelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,19 +23,12 @@
 		4CAA6ECE24ACBF2500AEFD62 /* TICodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TICodeView.h; sourceTree = "<group>"; };
 		4CAA6ED624ACBF8F00AEFD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CAA6EDB24ACC12400AEFD62 /* Substring+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Substring+Extensions.swift"; sourceTree = "<group>"; };
-		4CAA6EDE24ACC14200AEFD62 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		4CAA6EE124ACC19900AEFD62 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
-		4CAA6EE424ACC1F100AEFD62 /* InitializableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializableViewProtocol.swift; sourceTree = "<group>"; };
-		4CAA6EE624ACC26200AEFD62 /* InitializableViewProtocol+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InitializableViewProtocol+Extensions.swift"; sourceTree = "<group>"; };
-		4CAA6EEA24ACC36E00AEFD62 /* OneCodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCodeViewProtocol.swift; sourceTree = "<group>"; };
 		4CAA6EEC24ACC39000AEFD62 /* OneCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCodeTextField.swift; sourceTree = "<group>"; };
 		4CAA6EEF24ACC41300AEFD62 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		4CAA6EF224ACC54200AEFD62 /* OneCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCodeView.swift; sourceTree = "<group>"; };
-		4CAA6EF524ACC56600AEFD62 /* BaseInitializableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInitializableView.swift; sourceTree = "<group>"; };
 		4CAA6EF824ACC5E300AEFD62 /* TICodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TICodeView.swift; sourceTree = "<group>"; };
-		4CAA6EFB24ACC5F300AEFD62 /* TICodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TICodeViewModel.swift; sourceTree = "<group>"; };
 		4CD6B3BE24ACCC5F003BAD74 /* TICodeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TICodeConfig.swift; sourceTree = "<group>"; };
-		4CD6B3C124ACD2A3003BAD74 /* TICodeViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TICodeViewModelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8F38C024C31A9B005FCBED /* TIUIKitCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +66,6 @@
 				4CAA6ED624ACBF8F00AEFD62 /* Info.plist */,
 				4CAA6ED924ACC09500AEFD62 /* Extensions */,
 				4CAA6EE324ACC1B800AEFD62 /* Helpers */,
-				4CAA6EE924ACC29300AEFD62 /* Protocols */,
 				4CAA6EEE24ACC3AB00AEFD62 /* Views */,
 				4CD6B3C024ACCC62003BAD74 /* Models */,
 			);
@@ -89,8 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				4CAA6EDD24ACC13600AEFD62 /* Substring */,
-				4CAA6EE024ACC15400AEFD62 /* UIStackView */,
-				4CAA6EE824ACC28900AEFD62 /* InitializableViewProtocol */,
 				4CAA6EF124ACC44E00AEFD62 /* UITextField */,
 			);
 			path = Extensions;
@@ -104,14 +89,6 @@
 			path = Substring;
 			sourceTree = "<group>";
 		};
-		4CAA6EE024ACC15400AEFD62 /* UIStackView */ = {
-			isa = PBXGroup;
-			children = (
-				4CAA6EDE24ACC14200AEFD62 /* UIStackView+Extensions.swift */,
-			);
-			path = UIStackView;
-			sourceTree = "<group>";
-		};
 		4CAA6EE324ACC1B800AEFD62 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,28 +97,9 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		4CAA6EE824ACC28900AEFD62 /* InitializableViewProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				4CAA6EE624ACC26200AEFD62 /* InitializableViewProtocol+Extensions.swift */,
-			);
-			path = InitializableViewProtocol;
-			sourceTree = "<group>";
-		};
-		4CAA6EE924ACC29300AEFD62 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				4CAA6EE424ACC1F100AEFD62 /* InitializableViewProtocol.swift */,
-				4CAA6EEA24ACC36E00AEFD62 /* OneCodeViewProtocol.swift */,
-				4CD6B3C124ACD2A3003BAD74 /* TICodeViewModelDelegate.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		4CAA6EEE24ACC3AB00AEFD62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4CAA6EF724ACC56A00AEFD62 /* BaseInitializableView */,
 				4CAA6EF424ACC55B00AEFD62 /* OneCode */,
 				4CAA6EFA24ACC5E900AEFD62 /* TICodeView */,
 			);
@@ -165,19 +123,10 @@
 			path = OneCode;
 			sourceTree = "<group>";
 		};
-		4CAA6EF724ACC56A00AEFD62 /* BaseInitializableView */ = {
-			isa = PBXGroup;
-			children = (
-				4CAA6EF524ACC56600AEFD62 /* BaseInitializableView.swift */,
-			);
-			path = BaseInitializableView;
-			sourceTree = "<group>";
-		};
 		4CAA6EFA24ACC5E900AEFD62 /* TICodeView */ = {
 			isa = PBXGroup;
 			children = (
 				4CAA6EF824ACC5E300AEFD62 /* TICodeView.swift */,
-				4CAA6EFB24ACC5F300AEFD62 /* TICodeViewModel.swift */,
 			);
 			path = TICodeView;
 			sourceTree = "<group>";
@@ -218,6 +167,9 @@
 			dependencies = (
 			);
 			name = TICodeView;
+			packageProductDependencies = (
+				4C8F38BF24C31A9B005FCBED /* TIUIKitCore */,
+			);
 			productName = TICodeView;
 			productReference = 4CAA6ECB24ACBF2500AEFD62 /* TICodeView.framework */;
 			productType = "com.apple.product-type.framework";
@@ -246,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 4CAA6EC124ACBF2500AEFD62;
+			packageReferences = (
+				4C8F38BE24C31A9B005FCBED /* XCRemoteSwiftPackageReference "TIUIKitCore" */,
+			);
 			productRefGroup = 4CAA6ECC24ACBF2500AEFD62 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,19 +226,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CAA6EF324ACC54200AEFD62 /* OneCodeView.swift in Sources */,
-				4CAA6EDF24ACC14200AEFD62 /* UIStackView+Extensions.swift in Sources */,
 				4CAA6EE224ACC19900AEFD62 /* Typealias.swift in Sources */,
-				4CAA6EE524ACC1F100AEFD62 /* InitializableViewProtocol.swift in Sources */,
-				4CAA6EE724ACC26200AEFD62 /* InitializableViewProtocol+Extensions.swift in Sources */,
 				4CAA6EDC24ACC12400AEFD62 /* Substring+Extensions.swift in Sources */,
-				4CD6B3C224ACD2A3003BAD74 /* TICodeViewModelDelegate.swift in Sources */,
-				4CAA6EF624ACC56600AEFD62 /* BaseInitializableView.swift in Sources */,
 				4CAA6EF024ACC41300AEFD62 /* UITextField+Extensions.swift in Sources */,
-				4CAA6EEB24ACC36E00AEFD62 /* OneCodeViewProtocol.swift in Sources */,
 				4CD6B3BF24ACCC5F003BAD74 /* TICodeConfig.swift in Sources */,
 				4CAA6EF924ACC5E300AEFD62 /* TICodeView.swift in Sources */,
 				4CAA6EED24ACC39000AEFD62 /* OneCodeTextField.swift in Sources */,
-				4CAA6EFC24ACC5F300AEFD62 /* TICodeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +370,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +398,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +435,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C8F38BE24C31A9B005FCBED /* XCRemoteSwiftPackageReference "TIUIKitCore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Loupehope/TIUIKitCore";
+			requirement = {
+				kind = exactVersion;
+				version = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C8F38BF24C31A9B005FCBED /* TIUIKitCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C8F38BE24C31A9B005FCBED /* XCRemoteSwiftPackageReference "TIUIKitCore" */;
+			productName = TIUIKitCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CAA6EC224ACBF2500AEFD62 /* Project object */;
 }

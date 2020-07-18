@@ -20,15 +20,34 @@
 //  THE SOFTWARE.
 //
 
+#if !os(macOS)
+
 import UIKit
+import TIUIKitCore
 
 /// Basic textFieldView for entering the verification code
-open class TICodeView<View: OneCodeView, ViewModel: TICodeViewModel>: BaseInitializableView {
+open class TICodeView<View: OneCodeView>: BaseInitializableView {
     public private(set) var codeStackView = UIStackView()
     public private(set) var textFieldsCollection: [View] = []
-
+    
+    public var onTextEnter: ((String) -> Void)?
+    
     public var code: String {
-        textFieldsCollection.compactMap { $0.codeTextField.text }.joined()
+        get {
+            textFieldsCollection.compactMap { $0.codeTextField.text }.joined()
+        }
+        set {
+            textFieldsCollection.first?.codeTextField.set(inputText: newValue)
+        }
+    }
+    
+    public var focus: Bool {
+        get {
+            !textFieldsCollection.allSatisfy { !$0.codeTextField.isFirstResponder }
+        }
+        set {
+            updateFirstResponder(isFocus: newValue)
+        }
     }
     
     open override func addViews() {
@@ -44,17 +63,15 @@ open class TICodeView<View: OneCodeView, ViewModel: TICodeViewModel>: BaseInitia
         codeStackView.distribution = .fillEqually
     }
 
-    open func configure(with viewModel: ViewModel) {
-        textFieldsCollection = createTextFields(numberOfFields: viewModel.codeConfig.codeSymbolsCount)
+    open func configure(with config: TICodeConfig) {
+        textFieldsCollection = createTextFields(numberOfFields: config.codeSymbolsCount)
         
         codeStackView.addArrangedSubviews(textFieldsCollection)
-        codeStackView.spacing = viewModel.codeConfig.spacing
+        codeStackView.spacing = config.spacing
         
-        configure(customSpacing: viewModel.codeConfig.customSpacing, for: codeStackView)
+        configure(customSpacing: config.customSpacing, for: codeStackView)
         
-        bindTextFields(with: viewModel)
-        
-        viewModel.delegate = self
+        bindTextFields(with: config)
     }
     
     open func updateFirstResponder(isFocus: Bool) {
@@ -67,16 +84,6 @@ open class TICodeView<View: OneCodeView, ViewModel: TICodeViewModel>: BaseInitia
                 ? textField?.codeTextField.becomeFirstResponder()
                 : textField?.codeTextField.resignFirstResponder()
         }
-    }
-}
-
-extension TICodeView: TICodeViewModelDelegate {
-    public func update(text: String) {
-        textFieldsCollection.first?.codeTextField.set(inputText: text)
-    }
-    
-    public func update(focus: Bool) {
-        updateFirstResponder(isFocus: focus)
     }
 }
 
@@ -104,14 +111,7 @@ private extension TICodeView {
              after view: UIView,
              at index: Int,
              for stackView: UIStackView) {
-        if #available(iOS 11.0, *) {
-            stackView.setCustomSpacing(spacing, after: view)
-        } else {
-            let emptyView = UIView(frame: .init(origin: .zero,
-                                                size: .init(width: spacing,
-                                                            height: .zero)))
-            stackView.insertArrangedSubview(emptyView, at: index + 1)
-        }
+        stackView.setCustomSpacing(spacing, after: view)
     }
     
     func createTextFields(numberOfFields: Int) -> [View] {
@@ -127,21 +127,23 @@ private extension TICodeView {
         return textFieldsCollection
     }
     
-    func bindTextFields(with viewModel: ViewModel) {
-        let onTextChanged: (() -> Void) = { [weak self] in
+    func bindTextFields(with config: TICodeConfig) {
+        let onTextChangedSignal: VoidClosure = { [weak self] in
             guard let code = self?.code else { return }
             
-            let correctedCode = code.prefix(viewModel.codeConfig.codeSymbolsCount).string
-            viewModel.onTextEnter?(correctedCode)
+            let correctedCode = code.prefix(config.codeSymbolsCount).string
+            self?.onTextEnter?(correctedCode)
         }
         
-        let onTap: (() -> Void) = { [weak self] in
+        let onTap: VoidClosure = { [weak self] in
             self?.updateFirstResponder(isFocus: true)
         }
         
         textFieldsCollection.forEach {
-            $0.codeTextField.onTextChanged = onTextChanged
+            $0.codeTextField.onTextChangedSignal = onTextChangedSignal
             $0.onTap = onTap
         }
     }
 }
+
+#endif

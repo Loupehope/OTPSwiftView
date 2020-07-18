@@ -20,6 +20,8 @@
 //  THE SOFTWARE.
 //
 
+#if !os(macOS)
+
 import UIKit
 
 public extension UITextField {
@@ -27,3 +29,5 @@ public extension UITextField {
         text ?? ""
     }
 }
+
+#endif

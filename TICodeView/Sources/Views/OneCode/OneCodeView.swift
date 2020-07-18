@@ -20,13 +20,15 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
+#if !os(macOS)
+
+import TIUIKitCore
 
 /// Basic one code view with textField for entering the verification code
-open class OneCodeView: InitializableOneCodeView {
+open class OneCodeView: BaseInitializableView {
     public let codeTextField = OneCodeTextField()
     
-    public var onTap: (() -> Void)?
+    public var onTap: VoidClosure?
     
     open override func addViews() {
         super.addViews()
@@ -34,3 +36,5 @@ open class OneCodeView: InitializableOneCodeView {
         addSubview(codeTextField)
     }
 }
+
+#endif

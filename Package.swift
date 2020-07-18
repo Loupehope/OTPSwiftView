@@ -6,16 +6,22 @@ import PackageDescription
 let package = Package(
     name: "TICodeView",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v12)
     ],
     products: [
         .library(
             name: "TICodeView",
             targets: ["TICodeView"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/Loupehope/TIUIKitCore.git", .exact("0.0.1")),
+    ],
     targets: [
         .target(
             name: "TICodeView",
+            dependencies: [
+                "TIUIKitCore"
+            ],
             path: "TICodeView/Sources"),
     ]
 )
