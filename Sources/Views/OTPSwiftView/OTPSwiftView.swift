@@ -23,7 +23,7 @@
 import UIKit
 import TIUIKitCore
 
-/// Basic textFieldView for entering the verification code
+/// Base full OTP View for entering the verification code
 open class OTPSwiftView<View: OTPView>: BaseInitializableView {
     public private(set) var codeStackView = UIStackView()
     public private(set) var textFieldsCollection: [View] = []

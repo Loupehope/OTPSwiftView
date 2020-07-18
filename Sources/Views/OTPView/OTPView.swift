@@ -22,7 +22,7 @@
 
 import TIUIKitCore
 
-/// Basic one code view with textField for entering the verification code
+/// Base OTP view with textfield for entering a one symbol
 open class OTPView: BaseInitializableView {
     public let codeTextField = OTPTextField()
     

@@ -22,6 +22,7 @@
 
 import UIKit
 
+/// Base configuration for OTPSwiftView
 open class OTPCodeConfig {
     public let codeSymbolsCount: Int
     public let spacing: CGFloat

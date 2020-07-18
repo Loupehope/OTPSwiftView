@@ -22,7 +22,5 @@
 
 import UIKit
 
-//MARK: - Types
-
 public typealias Spacing = [Int: CGFloat]
 public typealias VoidClosure = (() -> Void)

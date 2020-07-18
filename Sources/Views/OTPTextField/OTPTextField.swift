@@ -22,7 +22,7 @@
 
 import UIKit
 
-/// Basic one code textField for entering the verification code
+/// Base one symbol textfield
 public class OTPTextField: UITextField {
     private let maxSymbolsCount = 1
     
