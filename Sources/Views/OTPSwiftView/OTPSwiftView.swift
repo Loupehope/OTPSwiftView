@@ -77,7 +77,7 @@ open class OTPSwiftView<View: OTPView>: BaseInitializableView {
             $0.codeTextField.unwrappedText.isEmpty
         } ?? textFieldsCollection.last
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { // to be sure that keyboard is showed/hidden
             _ = isFocus
                 ? textField?.codeTextField.becomeFirstResponder()
                 : textField?.codeTextField.resignFirstResponder()

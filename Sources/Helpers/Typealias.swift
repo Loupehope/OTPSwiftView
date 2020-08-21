@@ -24,3 +24,4 @@ import UIKit
 
 public typealias Spacing = [Int: CGFloat]
 public typealias VoidClosure = (() -> Void)
+public typealias ValidationClosure<T> = ((T) -> Bool)

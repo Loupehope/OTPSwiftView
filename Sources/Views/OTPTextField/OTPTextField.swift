@@ -23,22 +23,27 @@
 import UIKit
 
 /// Base one symbol textfield
-public class OTPTextField: UITextField {
+open class OTPTextField: UITextField {
     private let maxSymbolsCount = 1
     
     public weak var previousTextField: OTPTextField?
     public weak var nextTextField: OTPTextField?
     
     public var onTextChangedSignal: VoidClosure?
-    public var validationClosure: ((String) -> Bool)?
+    public var validationClosure: ValidationClosure<String>?
+    public var caretHeight: CGFloat?
     
     public var lastNotEmpty: OTPTextField {
         let isLastNotEmpty = !unwrappedText.isEmpty && nextTextField?.unwrappedText.isEmpty ?? true
         return isLastNotEmpty ? self : nextTextField?.lastNotEmpty ?? self
     }
     
-    open var isCursorEqualsFontHeight: Bool {
-        true
+    open override var font: UIFont? {
+        didSet {
+            if caretHeight == nil, let font = font {
+                caretHeight = font.pointSize - font.descender
+            }
+        }
     }
     
     public override init(frame: CGRect) {
@@ -73,12 +78,12 @@ public class OTPTextField: UITextField {
     }
     
     open override func caretRect(for position: UITextPosition) -> CGRect {
-        guard isCursorEqualsFontHeight, let font = font else {
+        guard let caretHeight = caretHeight else {
             return super.caretRect(for: position)
         }
         
         var superRect = super.caretRect(for: position)
-        superRect.size.height = font.pointSize - font.descender
+        superRect.size.height = caretHeight
 
         return superRect
     }

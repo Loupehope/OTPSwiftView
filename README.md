@@ -73,6 +73,8 @@ class CustomOTPView: OTPView {
         super.bindViews()
         
         // Binding to data or user actions
+
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTap)))
     }
     
     override func configureAppearance() {
