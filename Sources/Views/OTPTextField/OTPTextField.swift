@@ -99,7 +99,7 @@ extension OTPTextField: UITextFieldDelegate {
         
         let isInputEmpty = textField.unwrappedText.isEmpty && string.isEmpty
         
-        guard isInputEmpty || validationClosure?(string) ?? false else {
+        guard isInputEmpty || validationClosure?(string) ?? true else {
             return false
         }
         

@@ -73,7 +73,7 @@ open class OTPSwiftView<View: OTPView>: BaseInitializableControl {
     
     @discardableResult
     open override func becomeFirstResponder() -> Bool {
-        guard let emptyOTPView = emptyOTPView, emptyOTPView.isFirstResponder else {
+        guard let emptyOTPView = emptyOTPView, !emptyOTPView.isFirstResponder else {
             return false
         }
         
@@ -82,7 +82,7 @@ open class OTPSwiftView<View: OTPView>: BaseInitializableControl {
     
     @discardableResult
     open override func resignFirstResponder() -> Bool {
-        guard let emptyOTPView = emptyOTPView, !emptyOTPView.isFirstResponder else {
+        guard let emptyOTPView = emptyOTPView, emptyOTPView.isFirstResponder else {
             return false
         }
         
