@@ -24,7 +24,11 @@ import UIKit
 import TIUIKitCore
 
 /// Base full OTP View for entering the verification code
-open class OTPSwiftView<View: OTPView>: BaseInitializableView {
+open class OTPSwiftView<View: OTPView>: BaseInitializableControl {
+    private var emptyOTPView: View? {
+        textFieldsCollection.first { $0.codeTextField.unwrappedText.isEmpty } ?? textFieldsCollection.last
+    }
+
     public private(set) var codeStackView = UIStackView()
     public private(set) var textFieldsCollection: [View] = []
     
@@ -39,13 +43,8 @@ open class OTPSwiftView<View: OTPView>: BaseInitializableView {
         }
     }
     
-    public var focus: Bool {
-        get {
-            !textFieldsCollection.allSatisfy { !$0.codeTextField.isFirstResponder }
-        }
-        set {
-            updateFirstResponder(isFocus: newValue)
-        }
+    public override var isFirstResponder: Bool {
+        !textFieldsCollection.allSatisfy { !$0.codeTextField.isFirstResponder }
     }
     
     open override func addViews() {
@@ -72,16 +71,22 @@ open class OTPSwiftView<View: OTPView>: BaseInitializableView {
         bindTextFields(with: config)
     }
     
-    open func updateFirstResponder(isFocus: Bool) {
-        let textField = textFieldsCollection.first {
-            $0.codeTextField.unwrappedText.isEmpty
-        } ?? textFieldsCollection.last
-        
-        DispatchQueue.main.async { // to be sure that keyboard is showed/hidden
-            _ = isFocus
-                ? textField?.codeTextField.becomeFirstResponder()
-                : textField?.codeTextField.resignFirstResponder()
+    @discardableResult
+    open override func becomeFirstResponder() -> Bool {
+        guard let emptyOTPView = emptyOTPView, emptyOTPView.isFirstResponder else {
+            return false
         }
+        
+        return emptyOTPView.codeTextField.becomeFirstResponder()
+    }
+    
+    @discardableResult
+    open override func resignFirstResponder() -> Bool {
+        guard let emptyOTPView = emptyOTPView, !emptyOTPView.isFirstResponder else {
+            return false
+        }
+        
+        return emptyOTPView.codeTextField.resignFirstResponder()
     }
 }
 
@@ -134,7 +139,7 @@ private extension OTPSwiftView {
         }
         
         let onTap: VoidClosure = { [weak self] in
-            self?.updateFirstResponder(isFocus: true)
+            self?.becomeFirstResponder()
         }
         
         textFieldsCollection.forEach {
