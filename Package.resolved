@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "TIUIKitCore",
-        "repositoryURL": "https://github.com/Loupehope/TIUIKitCore.git",
+        "package": "LeadKit",
+        "repositoryURL": "https://github.com/TouchInstinct/LeadKit",
         "state": {
           "branch": null,
-          "revision": "464cf383253aa1accbd7484dbeeb2866bfb04293",
-          "version": "0.0.1"
+          "revision": "be8ba32d46e1b8d27e6b7fc9dfaa749377ebe1a9",
+          "version": "0.9.39"
         }
       }
     ]

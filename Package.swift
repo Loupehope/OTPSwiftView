@@ -9,19 +9,12 @@ let package = Package(
         .iOS(.v12)
     ],
     products: [
-        .library(
-            name: "OTPSwiftView",
-            targets: ["OTPSwiftView"]),
+        .library(name: "OTPSwiftView", targets: ["OTPSwiftView"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Loupehope/TIUIKitCore.git", .exact("0.0.1")),
+        .package(url: "https://github.com/TouchInstinct/LeadKit", from: .init(0, 3, 9))
     ],
     targets: [
-        .target(
-            name: "OTPSwiftView",
-            dependencies: [
-                "TIUIKitCore"
-            ],
-            path: "Sources"),
+        .target(name: "OTPSwiftView", dependencies: ["TIUIKitCore"], path: "Sources"),
     ]
 )
