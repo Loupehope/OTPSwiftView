@@ -26,8 +26,6 @@ import UIKit
 open class OTPTextField: UITextField {
     private let maxSymbolsCount = 1
     
-    private var isSelectedOTP = false
-    
     public weak var previousTextField: OTPTextField?
     public weak var nextTextField: OTPTextField?
     
@@ -92,21 +90,7 @@ open class OTPTextField: UITextField {
     
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
-        return view == self && isSelectedOTP ? view : nil
-    }
-    
-    @discardableResult
-    open override func becomeFirstResponder() -> Bool {
-        isSelectedOTP = true
-        
-        return super.becomeFirstResponder()
-    }
-    
-    @discardableResult
-    open override func resignFirstResponder() -> Bool {
-        isSelectedOTP = false
-        
-        return super.resignFirstResponder()
+        return view == self && isFirstResponder ? view : nil
     }
 }
 
