@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         otpView.configure(with: config)
         
-        /* Bind events */
+        /* Get code */
         
         otpView.onTextEnter = { code in
             // Get code from codeView
